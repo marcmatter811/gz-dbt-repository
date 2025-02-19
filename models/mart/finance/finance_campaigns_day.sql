@@ -1,19 +1,7 @@
 select
-    date_date AS date
-    ,operational_margin-ads_cost AS ads_margin
-    ,average_basket
-    ,operational_margin
-    ,ads_cost
-    ,impression
-    ,click
-    ,quantity
-    ,revenue
-    ,purchase_cost
-    ,margin
-    ,shipping_fee
-    ,logcost
-    ,ship_cost
-
+    campaigns.*
+    ,ROUND(operational_margin-ads_cost,2) AS ads_margin
+    ,finance.*
     
 FROM
     {{ref('int_campaigns_day')}} AS campaigns
