@@ -6,4 +6,4 @@ FROM
 
 LEFT JOIN
     {{ref('finance_days')}} AS finance
-USING (date_date)
+ON campaings.date_date = finance.date_date
